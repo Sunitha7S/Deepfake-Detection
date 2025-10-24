@@ -1,0 +1,21 @@
+{
+  "name": "Deepfake-Detection (CPU)",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "runArgs": [
+    "-v",
+    "C:\\\\Users\\\\sunit\\\\FFdataset:/data/FaceForensics:rw"
+  ],
+  "workspaceFolder": "/home/developer/workspace/Deepfake-Detection",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/developer/workspace/Deepfake-Detection,type=bind,consistency=cached",
+  "postCreateCommand": "python3 -m venv .venv && . .venv/bin/activate && python -m pip install --upgrade pip setuptools wheel && pip install -r requirements.txt || true",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    "ms-azuretools.vscode-docker",
+    "ms-vscode-remote.remote-containers"
+  ]
+}
